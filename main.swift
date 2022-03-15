@@ -1,46 +1,154 @@
+var loop = 1
+var cart: [String] = []
 
-var distance = readLine()
+while(loop != 0){
+  print("=========================")
+  print("     Point of Sales")
+  print("=========================")
+  print("")
+  print("Options:")
+  print("[1] Buy Food")
+  print("[2] Shopping Cart")
+  print("[x] Exit\n")
 
-switch distance {
-  case "a", "e", "i", "o", "u":
-  print("Vowel")
-  // case 11...100:
-  // print("pretty far")
-  // case 101...999:
-  // print("really far away")
-  default:
-  print("consonant")
-}
+  print("Your Choice: ")
+  var choice = readLine()
+  print("")
 
-var largestnumber: Int
-let number1 = 10
-let number2 = 5
+  //choices
+  if choice == "1"{
 
-largestnumber = (number1 < number2) ? number1 : number2
-// ^ format ini artinya (apakah kondisi ini benar)
-// lalu output jika true : output jika false
-print("larger number \(largestnumber)")
+    var loopfood = 1
 
+     //Pilih Makanan
+    while(loopfood != 0){
+      print("Hi, we have 5 Food & Beverage options for you!")
+      print("==============================================")
+      print("[F03] Gado-Gado")
+      print("[F02] Chicken Satay")
+      print("[F01] Nasi Padang")
+      print("[B02] Mineral Water")
+      print("[B01] Ice Tea")
+      print("[Q] Back to Main Menu\n")
+  
 
+      //Input pilihan makanan
+      print("Your F&B choice?")
+      var choicefnb = readLine()
 
-// var temperature = 100
+      //F01
+    if choicefnb == "F01" || choicefnb == "f01"{
+        print("How Many \"Nasi Padang\" do you want?")
+        let amount = readLine()
+        let temp = amount! + " Nasi Padang"
+        cart.append(temp)
 
-// if (temperature >= 90) &&
-// (temperature <= 100){
-//   print("Temperature is okay")
-// } else if (temperature < 90){
-//   print("It is too cold")
-// } else {
-//   print("It is too hot")
-// }
+        //Print Shopping Cart
+        print("\nShopping Cart (\(cart.count) Items)")
+        for item in cart {
+          print("\(item)")
+        }
+        print("")
+      }
 
+      //F02
+    else if choicefnb == "F02" || choicefnb == "f02"{
+        print("How Many \"Chicken Satay\" do you want?")
+        let amount = readLine()
+        let temp = amount! + " Chicken Satay"
+        cart.append(temp)
 
+        //Print Shopping Cart
+        print("\nShopping Cart (\(cart.count) Items)")
+        for item in cart {
+          print("\(item)")
+        }
+        print("")
+      }
 
-// let names = ["A", "Alex", "Brian", "Jack"]
-// for name in names {
-//     print("Hello, I'm \(name)")
-// }
-// Hello, Anna!
-// Hello, Alex!
-// Hello, Brian!
-// Hello, Jack!
+      //F03
+      else if choicefnb == "F03" || choicefnb == "f03"{
+        print("How Many \"Gado-Gado\" do you want?")
+        let amount = readLine()
+        let temp = amount! + " Gado-Gado"
+        cart.append(temp)
+
+        //Print Shopping Cart
+        print("\nShopping Cart (\(cart.count) Items)")
+        for item in cart {
+          print("\(item)")
+        }
+        print("")
+      }
+
+      //B01
+      else if choicefnb == "B01" || choicefnb == "b01"{
+        print("How Many \"Ice Tea\" do you want?")
+        let amount = readLine()
+        let temp = amount! + " Ice Tea"
+        cart.append(temp)
+
+        //Print Shopping Cart
+        print("\nShopping Cart (\(cart.count) Items)")
+        for item in cart {
+          print("\(item)")
+        }
+        print("")
+      }
+
+      //B02
+      else if choicefnb == "B02" || choicefnb == "b02"{
+        print("How Many \"Mineral Water\" do you want?")
+        let amount = readLine()
+        let temp = amount! + " Mineral Water"
+        cart.append(temp)
+
+        //Print Shopping Cart
+        print("\nShopping Cart (\(cart.count) Items)")
+        for item in cart {
+          print("\(item)")
+        }
+        print("")
+      }
+
+      else if choicefnb == "Q" || choicefnb == "q"{
+        print("")
+        loopfood = 0
+        break
+      }
+      
+      else{
+        print("\nWrong Input\n")
+      }
+    }
+  }
+
+  //choice lihat cart
+  else if choice == "2"{
+
+    if cart.count != 0{
+      print("\nShopping Cart (\(cart.count) Items)")
+      for item in cart {
+        print("\(item)")
+      }
+      print("")
+    }
+    else {
+      print("Kart kosong")
+    }
+    }
+
+  //choice exit
+  else if choice == "x" || choice == "X"{
+    print("Thank you!!! Have a Nice Day:)")
+    loop = 0
+    break
+  }
+
+  else{
+    print("\nWrong Input\n")
+    
+  }
+  }
+
+  
